@@ -6,6 +6,10 @@ on:
       - main
     paths:
       - "**/*.go"
+  pull_request:
+    types: [opened]
+    paths:
+      - "**/*.go"
 
 jobs:
   test:
