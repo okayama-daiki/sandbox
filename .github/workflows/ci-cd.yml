@@ -16,7 +16,7 @@ jobs:
       - name: Setup wasm-pack
         run: cargo install wasm-pack
       - name: Build with wasm-pack
-        run: cd hello-wasm && wasm-pack build --target bundle
+        run: cd hello-wasm && wasm-pack build --target bundler
       - name: Install dependencies
         run: bun install
       - name: Run tests with cargo
@@ -36,7 +36,7 @@ jobs:
       - name: Setup wasm-pack
         run: cargo install wasm-pack
       - name: Build with wasm-pack
-        run: cd hello-wasm && wasm-pack build --release --target bundle
+        run: cd hello-wasm && wasm-pack build --release --target bundler
       - name: Build with bun
         run: bun run build
       - name: Upload static files as artifact
