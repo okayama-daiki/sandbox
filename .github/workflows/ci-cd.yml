@@ -34,7 +34,8 @@ jobs:
       - name: Setup wasm-pack
         run: cargo install wasm-pack
       - name: Build with wasm-pack
-        run: cd hello-wasm && wasm-pack build --release --target bundler
+        working-directory: hello-wasm
+        run: wasm-pack build --release --target bundler
       - name: Install dependencies
         run: bun install
       - name: Build with bun
