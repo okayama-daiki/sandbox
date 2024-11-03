@@ -13,6 +13,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
+      - name: Setup wasm-pack
+        run: cargo install wasm-pack
+      - name: Build with wasm-pack
+        run: cd hello-wasm && wasm-pack build --target bundle
       - name: Install dependencies
         run: bun install
       - name: Run tests with cargo
@@ -29,7 +33,7 @@ jobs:
         uses: oven-sh/setup-bun@v2
       - name: Install dependencies
         run: bun install
-      - name: Setup Wasm-pack
+      - name: Setup wasm-pack
         run: cargo install wasm-pack
       - name: Build with wasm-pack
         run: cd hello-wasm && wasm-pack build --release --target bundle
