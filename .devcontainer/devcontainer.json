@@ -1,3 +1,9 @@
 {
-	"image": "mcr.microsoft.com/devcontainers/base:debian"
+	"image": "mcr.microsoft.com/devcontainers/base:debian",
+	"mounts": [
+		"source=/run/host-services/ssh-auth.sock,target=/ssh-agent,type=bind"
+	],
+	"remoteEnv": {
+		"SSH_AUTH_SOCK": "/ssh-agent"
+	}
 }
